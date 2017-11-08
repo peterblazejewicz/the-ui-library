@@ -8,6 +8,30 @@
 - Styleguidist
 - Bootstrap 4
 
+## Running examples
+
+### React app
+
+That is the crude sample left after using 'create-react-app'
+
+```bash
+yarn start
+```
+
+### Styleguide
+
+First start build process:
+
+```bash
+yarn start
+```
+
+Next run styleguide server:
+
+```bash
+yarn styleguide
+```
+
 ## Author
 
 @peterblazejewicz
