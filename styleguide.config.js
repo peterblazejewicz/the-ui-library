@@ -1,6 +1,6 @@
 module.exports = {
   components: 'src/components/**/*.{ts,tsx}',
-  propsParser: require('react-docgen-typescript').parse,
+  propsParser: require('react-docgen-typescript').withDefaultConfig().parse,
   webpackConfig: require('react-scripts-ts/config/webpack.config.dev.js'),
   showSidebar: true
 }

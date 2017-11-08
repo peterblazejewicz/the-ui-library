@@ -81,3 +81,6 @@ yarn-error.log*
 
 # remove transpiled CSS from repo
 **/*.css
+
+# do not store exported styleguide (yet)
+styleguide/
