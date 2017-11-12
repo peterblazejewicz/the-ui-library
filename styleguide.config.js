@@ -15,6 +15,7 @@ const getComponentPathLine = (componentPath) => {
 }
 
 module.exports = {
+  title: 'The UI Library',
   components: 'src/components/**/*.{ts,tsx}',
   ignore: [
     '**/__tests__/**',
