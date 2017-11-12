@@ -1,7 +1,7 @@
 import React, { SFC, MouseEvent } from 'react';
 import './WrappedButton.css';
 
-interface WrappedButtonProps {
+export interface WrappedButtonProps {
   /**
    * The color for the button
    * @type {string}
@@ -32,10 +32,10 @@ interface WrappedButtonProps {
   /**
    * The size of the Button
    * @since Version 1.0.1
-   * @type {('small' | 'normal' | 'large')}
+   * @type {WrappedButtonSizes}
    * @memberof WrappedButtonProps
    */
-  size?: 'small' | 'normal' | 'large';
+  size?: WrappedButtonSizes;
   /**
    * Button label.
    * @type {string}
@@ -43,11 +43,11 @@ interface WrappedButtonProps {
    */
   label?: string;
 }
-const sizes = {
-  small: '10px',
-  normal: '14px',
-  large: '16px',
-};
+export enum WrappedButtonSizes {
+  Small = '10px',
+  Normal = '14px',
+  large = '16px',
+}
 
 /**
  * A button wrapped by a Decorator/Enhancer
@@ -63,7 +63,7 @@ export const WrappedButton: SFC<WrappedButtonProps> = ({
 }) => {
   const styles = {
     color,
-    fontSize: sizes[size!],
+    fontSize: WrappedButtonSizes[size!],
   };
   return (
     <div className="btn btn-primary" style={styles}>
@@ -74,7 +74,7 @@ export const WrappedButton: SFC<WrappedButtonProps> = ({
 
 WrappedButton.defaultProps = {
   color: '#333',
-  size: 'normal',
+  size: WrappedButtonSizes.Normal,
 };
 
 export default WrappedButton;

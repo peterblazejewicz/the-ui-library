@@ -2,12 +2,8 @@ import React, { Component, MouseEvent } from 'react';
 import './RandomButton.css';
 import sample from 'lodash.sample';
 
-export class Labels extends Array {
-  [id: number]: string;
-}
-
 export interface RandomButtonProps {
-  labels?: Labels;
+  labels?: string[];
 }
 
 export interface RandomButtonState {
@@ -18,7 +14,7 @@ export default class RandomButton extends Component<
   RandomButtonProps,
   RandomButtonState
 > {
-  public static defaultProperties: RandomButtonProps;
+  static defaultProperties: RandomButtonProps;
 
   constructor(props: RandomButtonProps) {
     super(props);

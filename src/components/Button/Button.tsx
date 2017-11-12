@@ -1,10 +1,15 @@
 import React, { SFC, MouseEvent } from 'react';
 
-const sizes: { [id: string]: string } = {
-  small: '10px',
-  normal: '14px',
-  large: '18px',
-};
+/**
+ * Available Button font sizes
+ *
+ * @enum {number}
+ */
+export enum ButtonFontSize {
+  Small = '10px',
+  Normal = '14px',
+  Large = '18px',
+}
 
 /**
  * Button properties.
@@ -17,11 +22,11 @@ export interface ButtonProps {
    */
   color?: string;
   /**
-   * The color for the button
-   * @type {('small' | 'normal' | 'large')}
+   * The font size for the button
+   * @type {ButtonFontSize}
    * @memberof ButtonProps
    */
-  size?: 'small' | 'normal' | 'large';
+  size?: ButtonFontSize;
   /**
    * Disable button
    * @type {boolean}
@@ -51,7 +56,7 @@ export const Button: SFC<ButtonProps> = ({
 }) => {
   const styles = {
     color,
-    fontSize: sizes[size!],
+    fontSize: ButtonFontSize[size!],
   };
   return (
     <button
@@ -67,7 +72,7 @@ export const Button: SFC<ButtonProps> = ({
 
 Button.defaultProps = {
   color: '#333',
-  size: 'normal',
+  size: ButtonFontSize.Normal,
   onClick: event => {
     // eslint-disable-next-line no-console
     // tslint:disable-next-line:no-console

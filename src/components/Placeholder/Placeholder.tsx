@@ -5,7 +5,7 @@ import './Placeholder.css';
  * Possible placeholder type
  * @enum {string}
  */
-enum PlacolderTypes {
+export enum PlacolderTypes {
   Animal = 'animal',
   Bacon = 'bacon',
   Bear = 'bear',
@@ -16,7 +16,7 @@ enum PlacolderTypes {
   Nature = 'nature',
   People = 'people',
 }
-interface PlaceholderProps {
+export interface PlaceholderProps {
   /**
    * @property type of the placeholder
    * @type {PlacolderTypes}
