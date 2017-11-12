@@ -56,7 +56,11 @@ const sizes = {
  * @author [Jeremy Gayed](https://github.com/tizmagik)
  * @deprecated Use the [only true button](#button) instead
  */
-export const WrappedButton: SFC<WrappedButtonProps> = ({ color, size, label }) => {
+export const WrappedButton: SFC<WrappedButtonProps> = ({
+  color,
+  size,
+  label,
+}) => {
   const styles = {
     color,
     fontSize: sizes[size!],

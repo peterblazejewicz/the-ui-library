@@ -39,7 +39,9 @@ export default class CounterButton extends Component<
   CounterButtonProps,
   CounterButtonState
 > {
-  public static defaultProps: CounterButtonProps;
+  static defaultProps: CounterButtonProps = {
+    value: 0,
+  };
   /**
    * Creates an instance of CounterButton.
    * @param {CounterButtonProps} props
@@ -86,7 +88,3 @@ export default class CounterButton extends Component<
     );
   }
 }
-
-CounterButton.defaultProps = {
-  value: 0,
-};

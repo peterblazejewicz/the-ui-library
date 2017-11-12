@@ -1,3 +1,1 @@
-export {
-    default
-} from './RandomButton';
+export { default } from './RandomButton';

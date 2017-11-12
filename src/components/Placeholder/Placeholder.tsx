@@ -1,18 +1,39 @@
 import React, { Component } from 'react';
 import './Placeholder.css';
 
-export interface PlaceholderProps {
-  type?:
-    | 'animal'
-    | 'bacon'
-    | 'beard'
-    | 'bear'
-    | 'cat'
-    | 'food'
-    | 'city'
-    | 'nature'
-    | 'people';
+/**
+ * Possible placeholder type
+ * @enum {string}
+ */
+enum PlacolderTypes {
+  Animal = 'animal',
+  Bacon = 'bacon',
+  Bear = 'bear',
+  Beard = 'beard',
+  Cat = 'cat',
+  Food = 'food',
+  City = 'city',
+  Nature = 'nature',
+  People = 'people',
+}
+interface PlaceholderProps {
+  /**
+   * @property type of the placeholder
+   * @type {PlacolderTypes}
+   * @memberof PlaceholderProps
+   */
+  type?: PlacolderTypes;
+  /**
+   * @property width of the placeholder
+   * @type {number}
+   * @memberof PlaceholderProps
+   */
   width?: number;
+  /**
+   * @property height of the placeholder
+   * @type {number}
+   * @memberof PlaceholderProps
+   */
   height?: number;
 }
 
@@ -23,7 +44,11 @@ export default class Placeholder extends Component<PlaceholderProps> {
    * @type {PlaceholderProps}
    * @memberof Placeholder
    */
-  static defaultProps: PlaceholderProps;
+  static defaultProps: PlaceholderProps = {
+    type: PlacolderTypes.Animal,
+    width: 150,
+    height: 150,
+  };
 
   /**
    * @private
@@ -63,9 +88,3 @@ export default class Placeholder extends Component<PlaceholderProps> {
     );
   }
 }
-
-Placeholder.defaultProps = {
-  type: 'animal',
-  width: 150,
-  height: 150,
-};
