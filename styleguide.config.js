@@ -16,7 +16,18 @@ const getComponentPathLine = (componentPath) => {
 
 module.exports = {
   title: 'The UI Library',
-  components: 'src/components/**/*.{ts,tsx}',
+  sections: [
+    {
+      name: 'Components',
+      content: 'src/components/README.md',
+      components: 'src/components/**/*.{ts,tsx}',
+    },
+    {
+      name: 'Demos',
+      content: 'src/demos/README.md',
+      components: 'src/demos/**/*.{ts,tsx}',
+    }
+  ],
   ignore: [
     '**/__tests__/**',
     '**/*.test.js',
@@ -26,6 +37,7 @@ module.exports = {
     '**/index.ts',
   ],
   getComponentPathLine,
+  resolver: require('react-docgen').resolver.findAllComponentDefinitions,
   propsParser: require('react-docgen-typescript').withDefaultConfig().parse,
   webpackConfig: require('react-scripts-ts/config/webpack.config.dev.js'),
   showSidebar: true,
