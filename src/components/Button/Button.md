@@ -1,12 +1,12 @@
 Basic button:
 
-```ts
+```jsx
 <Button>Push Me</Button>
 ```
 
 Big pink button:
 
-```ts
+```jsx
 <Button size="large" color="deeppink">Lick Me</Button>
 ```
 
@@ -14,25 +14,25 @@ And you *can* **use** `any` [Markdown](http://daringfireball.net/projects/markdo
 
 Fenced code blocks with `ts`, `js` or `javascript` languages are rendered as a interactive playgrounds:
 
-```ts
+```jsx
 <Button>Push Me</Button>
 ```
 
 You can add a custom props to an example wrapper (```` ```js { "props": { "className": "checks" } }````):
 
-```ts { "props": { "className": "checks" } }
+```jsx { "props": { "className": "checks" } }
 <Button>I’m transparent!</Button>
 ```
 
 Or disable an editor by passing a `noeditor` modifier (```` ```js noeditor````):
 
-```ts noeditor
+```jsx noeditor
 <Button>Push Me</Button>
 ```
 
 To render an example as highlighted source code add a `static` modifier: (```` ```js static````):
 
-```js static
+```jsx static
 import React from 'react';
 ```
 
@@ -44,7 +44,7 @@ Fenced blocks with other languages are rendered as highlighted code:
 
 Each example has its own state that you can access at the `state` variable and change with the `setState` function. Default state is `{}`:
 
-```ts
+```jsx
 <div>
   <Button size="small" onClick={() => setState({isOpen: true})} disabled={state.isOpen}>Show Me</Button>
   {state.isOpen && <Button size="small" onClick={() => setState({isOpen: false})}>Hide Me</Button>}
@@ -53,7 +53,7 @@ Each example has its own state that you can access at the `state` variable and c
 
 You can change the default state:
 
-```ts
+```jsx
 initialState = {count: 42};
 <Button onClick={() => setState({count: state.count+1})}>{state.count}</Button>
 ```

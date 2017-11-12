@@ -74,3 +74,5 @@ Button.defaultProps = {
     console.log('You have clicked me!', event.target);
   },
 };
+
+export default Button;
